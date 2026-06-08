@@ -1,0 +1,1 @@
+/home/luisdfj/.dots/nvim/lua/theme/theme-dark.lua
