@@ -15,6 +15,7 @@ hl.bind( mainMod .. " + E", hl.dsp.exec_cmd(fileManager) )
 hl.bind( mainMod .. " + V", hl.dsp.window.float{action="toggle"} )
 hl.bind( mainMod .. " + SUPER_L", hl.dsp.exec_cmd(menu) )
 hl.bind( mainMod .. " + M", hl.dsp.exec_cmd("command -v hyprshutdown >/dev/null 2>&1 && hyprshutdown || hyprctl dispatch 'hl.dsp.exit()'") )
+hl.bind( "Print", hl.dsp.exec_cmd('grim -g "$(slurp -d)" - | wl-copy') )
 
 hl.bind( mainMod .. " + left", hl.dsp.focus{direction = "left"})
 hl.bind( mainMod .. " + right", hl.dsp.focus{direction = "right"})
