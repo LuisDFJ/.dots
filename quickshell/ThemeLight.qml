@@ -13,4 +13,5 @@ QtObject {
   readonly property int font_size: 13
   readonly property int height: 30
   readonly property int radius: 5
+  readonly property string theme: "--light"
 }

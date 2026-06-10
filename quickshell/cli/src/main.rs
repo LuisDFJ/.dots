@@ -19,13 +19,14 @@ use crate::battery::battery_info;
 use std::env;
 fn main() -> io::Result<()>{
     let args : Vec<String> = env::args().collect();
+    let theme = args.iter().find( |arg| arg.as_str() == "--light" ).is_some();
     for arg in args {
         match arg.as_str() {
-            "cpu"       => {println!("{}", cpu_info()); break},
-            "memory"    => {println!("{}", memory_info()); break},
-            "disk"      => {println!("{}", disk_info()); break},
-            "network"   => {println!("{}", network_info()); break},
-            "battery"   => {println!("{}", battery_info()); break},
+            "cpu"       => {println!("{}", cpu_info( theme )); break},
+            "memory"    => {println!("{}", memory_info( theme )); break},
+            "disk"      => {println!("{}", disk_info( theme )); break},
+            "network"   => {println!("{}", network_info( theme )); break},
+            "battery"   => {println!("{}", battery_info( theme )); break},
             "time"      => {println!("{}", time_info()); break},
             _ => {},
         }

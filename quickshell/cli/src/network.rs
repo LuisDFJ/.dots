@@ -40,14 +40,15 @@ fn parse_network() -> Option<NetworkInfo> {
     return None
 }
 
-pub fn network_info() -> String {
+use crate::cpu::map_color;
+pub fn network_info( theme : bool ) -> String {
     let netinfo = parse_network();
 
     let mut res = String::new();
     if let Some(info) = netinfo {
         res = format!("NET {} {} {} \u{f03d5}",
             info.ssid,
-            parse_signal( info.signal ),
+            map_color( info.signal as f32 / 100., parse_signal( info.signal ).as_str(), true, theme ),
             info.rate,
         )
     }

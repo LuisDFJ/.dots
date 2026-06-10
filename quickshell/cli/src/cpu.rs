@@ -1,8 +1,8 @@
 use sysinfo::System;
 use crate::hsl::{HSL,RGB};
 
-fn map_color( val : f32, s : &'static str ) -> String {
-    let col = HSL::new(180.*(1.-val),1.0,0.5);
+pub fn map_color( val : f32, s : &str, f : bool, theme : bool ) -> String {
+    let col = HSL::new( 180.* if f { val } else {1.-val},1.0, if theme { 0.25 } else { 0.5 } );
     format!("<font color=\"{}\">{}</font>", RGB::from_hsl(col).to_string(), s)
 }
 
@@ -20,7 +20,7 @@ fn map_char( val : f32 ) -> &'static str {
     }
 }
 
-pub fn cpu_info() -> String {
+pub fn cpu_info( theme : bool ) -> String {
     let max_cpu_freq = 4600;
     let mut sys = System::new();
     sys.refresh_all();
@@ -29,7 +29,7 @@ pub fn cpu_info() -> String {
     let mut res = format!("{} MHz ", sum / count );
     for cpu in sys.cpus() {
         let freq =cpu.frequency() as f32 / max_cpu_freq as f32;
-        res = res + map_color(freq,map_char(freq)).as_str();
+        res = res + map_color(freq,map_char(freq),false,theme).as_str();
     }
     res
 }

@@ -72,7 +72,7 @@ impl BatteryInfo {
 }
 
 use crate::disk::map_color;
-pub fn battery_info() -> String {
+pub fn battery_info( theme : bool ) -> String {
     let info = BatteryInfo::new();
-    format!("{} {}", info.icon(), map_color(info.capacity as f32 / 100., false) )
+    format!("{} {}", info.icon(), map_color(info.capacity as f32 / 100., false, theme) )
 }
