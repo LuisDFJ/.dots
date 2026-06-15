@@ -42,5 +42,6 @@ vim.lsp.enable({
   'lua_ls',
   'qmlls',
   'pyright',
-  'rust_analyzer'
+  'rust_analyzer',
+  'emmet_language_server',
 })

@@ -29,5 +29,10 @@ require('telescope').setup()
 require('telescope').load_extension('fzf')
 local cmp = require('blink.cmp')
 cmp.build():pwait()
-cmp.setup()
+cmp.setup{
+  keymap = { preset = 'default' },
+  sources = {
+    default = { 'lsp', 'path', 'snippets', 'buffer' },
+  }
+}
 

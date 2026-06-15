@@ -10,6 +10,6 @@ alias grep='grep --color=auto'
 PS1='[\u@\h \W]\$ '
 export HISTSIZE=10000
 export HISTFILESIZE=10000
-export PATH="$PATH:~/.cargo/bin"
+export PATH="$HOME/.cargo/bin:$HOME/.npm-global/bin:$PATH"
 
 export EDITOR="nvim"
