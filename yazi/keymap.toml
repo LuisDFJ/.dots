@@ -1,0 +1,8 @@
+[mgr]
+prepend_keymap = [
+  {
+    on = "T",
+    run = "shell --orphan --confirm kitty",
+    desc = "Open terminal at current dir"
+  }
+]

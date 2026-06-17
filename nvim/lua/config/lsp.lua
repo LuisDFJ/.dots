@@ -44,4 +44,5 @@ vim.lsp.enable({
   'pyright',
   'rust_analyzer',
   'emmet_language_server',
+  'tinymist',
 })

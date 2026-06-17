@@ -27,12 +27,4 @@ require('nvim-web-devicons').setup()
 require('nvim-autopairs').setup()
 require('telescope').setup()
 require('telescope').load_extension('fzf')
-local cmp = require('blink.cmp')
-cmp.build():pwait()
-cmp.setup{
-  keymap = { preset = 'default' },
-  sources = {
-    default = { 'lsp', 'path', 'snippets', 'buffer' },
-  }
-}
-
+require('packages.blink');
