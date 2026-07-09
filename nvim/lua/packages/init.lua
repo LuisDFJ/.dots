@@ -17,6 +17,7 @@ vim.pack.add({
   gh( 'saghen/blink.cmp' ),
   gh( 'voldikss/vim-floaterm' ),
   gh( 'romgrk/barbar.nvim' ),
+  gh( 'stevearc/oil.nvim' ),
 })
 
 require('nvim-treesitter').setup()
@@ -27,4 +28,10 @@ require('nvim-web-devicons').setup()
 require('nvim-autopairs').setup()
 require('telescope').setup()
 require('telescope').load_extension('fzf')
-require('packages.blink');
+require('oil').setup{
+  float = { max_width = 0.8, max_height = 0.8 },
+  keymaps = {
+    ['<Esc>'] = { 'actions.close', mode = 'n' }
+  }
+}
+require('packages.blink')

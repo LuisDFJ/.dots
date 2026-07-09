@@ -10,6 +10,8 @@ map('n', '<leader>ff', ts_bi.find_files, {} )
 map('n', '<leader>fg', ts_bi.live_grep, {} )
 map('n', '<leader>fb', ts_bi.buffers, {} )
 
+map('n', '<leader>e', ':Oil --float<Cr>', {desc='Open parent directory'})
+
 vim.diagnostic.config{
   float={
     scope='line',
