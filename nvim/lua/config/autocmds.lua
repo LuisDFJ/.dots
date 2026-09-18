@@ -9,3 +9,14 @@ vim.api.nvim_create_autocmd( "LspAttach", {
     end
   end
 })
+
+vim.api.nvim_create_autocmd("BufEnter", {
+  group = vim.api.nvim_create_augroup("cmp-sanitizer", {clear=true}),
+  callback = function(args)
+    -- If BufType is named (like TelescopePrompt)
+    if vim.bo[args.buf].buftype ~= "" then
+      -- Disable Autocomplete
+      vim.bo[args.buf].autocomplete = false
+    end
+  end,
+})

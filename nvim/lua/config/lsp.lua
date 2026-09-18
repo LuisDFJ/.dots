@@ -38,11 +38,17 @@ vim.lsp.config('qmlls', {
   root_markers = {'.git'}
 })
 
+vim.lsp.config( "*", {
+  capabilities = require('blink.cmp').get_lsp_capabilities()
+})
+
 vim.lsp.enable({
   'lua_ls',
   'qmlls',
   'pyright',
   'rust_analyzer',
-  'emmet_language_server',
+  --'emmet_language_server',
   'tinymist',
+  'gopls',
+  'ts_ls'
 })

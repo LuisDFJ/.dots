@@ -2,7 +2,7 @@ local cmp = require('blink.cmp')
 cmp.build():pwait()
 cmp.setup{
   signature = { enabled = true },
-  keymap = { 
+  keymap = {
     preset = 'default',
     ["<C-n>"] = {"select_next", "fallback"},
     ["<C-p>"] = {"select_prev", "fallback"},
@@ -12,5 +12,5 @@ cmp.setup{
   },
   sources = {
     default = { 'lsp', 'path', 'snippets', 'buffer' },
-  }
+  },
 }

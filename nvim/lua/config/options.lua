@@ -2,6 +2,10 @@ local opt = vim.opt
 
 opt.termguicolors = true
 
+opt.wrap = true
+opt.breakindent = true
+opt.showbreak = "↳ "
+
 opt.number = true
 opt.relativenumber = true
 opt.cursorline = true
