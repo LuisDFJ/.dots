@@ -34,6 +34,7 @@ opt.swapfile = false
 
 opt.clipboard = vim.env.SSH_TTY and "" or "unnamedplus"
 
-opt.completeopt = "menu,menuone,noselect,popup"
-vim.o.autocomplete = true
+--opt.completeopt = "menu,menuone,noselect,popup"
+--vim.o.autocomplete = true
+opt.autocomplete = false
 opt.cmdheight = 2
