@@ -10,10 +10,11 @@ end )
 
 local mainMod = "SUPER"
 hl.bind( mainMod .. " + C", hl.dsp.window.close() )
+hl.bind( mainMod .. " + F", hl.dsp.window.fullscreen() )
 hl.bind( mainMod .. " + Q", hl.dsp.exec_cmd(terminal) )
 hl.bind( mainMod .. " + E", hl.dsp.exec_cmd(fileManager) )
 hl.bind( mainMod .. " + V", hl.dsp.window.float{action="toggle"} )
-hl.bind( mainMod .. " + SUPER_L", hl.dsp.exec_cmd(menu) )
+hl.bind( mainMod .. " + SUPER_L", hl.dsp.exec_cmd(menu), {release=true} )
 hl.bind( mainMod .. " + M", hl.dsp.exec_cmd("command -v hyprshutdown >/dev/null 2>&1 && hyprshutdown || hyprctl dispatch 'hl.dsp.exit()'") )
 hl.bind( "Print", hl.dsp.exec_cmd('grim -g "$(slurp -d)" - | wl-copy') )
 

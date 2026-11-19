@@ -2,12 +2,9 @@ local cmp = require('blink.cmp')
 cmp.build():pwait()
 cmp.setup{
   signature = { enabled = true },
+  cmdline = { enabled = false },
   keymap = {
     preset = 'default',
-    ["<C-n>"] = {"select_next", "fallback"},
-    ["<C-p>"] = {"select_prev", "fallback"},
-    ["<C-y>"] = {"select_and_accept", "fallback"},
-    ["<C-Space>"] = {"show", "fallback"},
     ["<C-s>"] = {"show_signature", "fallback"},
   },
   sources = {
@@ -15,5 +12,8 @@ cmp.setup{
   },
   completion = {
     list = { selection = { preselect = false, auto_insert = false } },
+    menu = { auto_show = true, },
+    ghost_text = { enabled = true },
   },
 }
+
